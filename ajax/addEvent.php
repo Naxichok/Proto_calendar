@@ -10,7 +10,7 @@
     {
         $googleId = hash('sha256', rand(0, getrandmax()));
         $reqInsertRes       = $pdo->prepare('INSERT INTO reservation (id_key, id_user, title, date_start, date_stop, googleId) VALUES (:id_key, :id_user, :title, :date_start, :date_stop, :googleId)');
-        $reqSelectKeyName   = $pdo->prepare('SELECT name_key FROM key WHERE id_key = :id_key');
+        $reqSelectKeyName   = $pdo->prepare('SELECT name_key FROM cle WHERE id_key = :id_key');
         $reqSelectUserName  = $pdo->prepare('SELECT lastname_user, firstname_user FROM user WHERE id_user = :id_user');
         $reqSelectKeyName->execute([
             ':id_key' => $_POST['key']
