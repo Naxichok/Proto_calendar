@@ -8,7 +8,7 @@
   $reqSelectUser->execute();
 
   //Récupération de la liste des clés
-  $reqSelectKey = $pdo->prepare('SELECT * FROM eucles_key');
+  $reqSelectKey = $pdo->prepare('SELECT * FROM cle');
   $reqSelectKey->execute();
 
   //Récupération des réservations
